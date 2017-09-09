@@ -1,2 +1,7 @@
-# ci-pipeline-maven
-This is  Cont Int Pipeline with Quality Gates 
+# README
+Sample Maven Project
+
+# TEST
+Testing Bitbucket Webhook!
+
+Testing! AGAIN! and Again!

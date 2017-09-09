@@ -1,0 +1,41 @@
+{
+  "id": "/dev/automation/ci-pipeline-maven",
+  "cpus": 1,
+  "mem": 1536,
+  "instances": 1,
+  "requirePorts": false,
+  "backoffSeconds": 3,
+  "backoffFactor": 2,
+  "maxLaunchDelaySeconds": 3600,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "rhldcmesboot711.na.rccl.com:5000/ci-pipeline-maven:latest",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "protocol": "tcp",
+          "containerPort": 8080,
+          "hostPort": 0
+        }
+      ]
+    }
+  },
+  "labels": {
+    "HAPROXY_0_VHOST": "dev1.mesos.rccl.com",
+    "HAPROXY_GROUP": "external",
+    "HAPROXY_0_HTTP_BACKEND_PROXYPASS_PATH": "/ci-pipeline-maven",
+    "HAPROXY_0_PATH": "/ci-pipeline-maven"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "path": "/greeting",
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3,
+      "ignoreHttp1xx": false
+    }
+  ]
+}
