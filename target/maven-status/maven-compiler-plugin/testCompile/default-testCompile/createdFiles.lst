@@ -1,0 +1,3 @@
+io\royal\labs\pipeline\model\GreetingTestResponse.class
+io\royal\labs\pipeline\controller\GreetingControllerIntegrationTest.class
+io\royal\labs\pipeline\controller\GreetingControllerTest.class
