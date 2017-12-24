@@ -1,5 +1,5 @@
 package io.royal.labs.pipeline;
-//SSO Support
+//SSO and Encryption Support
 //ENABLE ENCRYPTION
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
